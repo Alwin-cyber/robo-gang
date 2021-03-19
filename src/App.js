@@ -1,9 +1,10 @@
 import React,{Component} from 'react';//{Component} in the curly braces destructure.
 import {CardList} from './components/card_list/card_list_component';//custom component
+import {SearchBox} from './components/search-box/search_box_component';
 import './App.css';
 
 /*if we don't destructure we can also use Component as React.Component*/
-class App extends Component{
+class App extends Component{/*class component*/
 
   constructor(){
     super();// to inherit the constructor properties of Component.
@@ -27,7 +28,7 @@ componentDidMount(){
     const filteredUsers = users.filter(users => users.name.toLowerCase().includes(searchField.toLowerCase()))
     return(
       <div className="App">
-        <input type="search" placeholder="Search" onChange={e => this.setState({searchField: e.target.value})}/>
+        <SearchBox placeholder="search" handleChange={event => this.setState({searchField:event.target.value})}/>
         <CardList users={filteredUsers}/>
       </div>
     );
@@ -35,3 +36,5 @@ componentDidMount(){
 }
 
 export default App;
+
+/*When ever the state is changed the react will re-render the component*/
