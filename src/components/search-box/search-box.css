@@ -1,6 +1,6 @@
 .search-box{
 	-webkit-appearance:none;
-	border: none;
+	border: 3px solid #1926b8;
 	outline: none;
 	padding: 10px;
 	width: 150px;
@@ -8,4 +8,5 @@
 	margin-bottom: 	30px;
 	margin-top: 30px;
 	width: 25em;
+	border-radius: 0.5em;
 }
