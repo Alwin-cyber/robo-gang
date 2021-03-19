@@ -9,8 +9,8 @@ class App extends Component{
     super();// to inherit the constructor properties of Component.
 
     this.state = {
-      users:[
-      ]
+      users:[],
+      searchField:''
     };
   }
 
@@ -24,6 +24,7 @@ componentDidMount(){
   render(){
     return(
       <div className="App">
+        <input type="search" placeholder="Search" onChange={e => this.setState({searchField: e.target.value})}/>
         <CardList users={this.state.users}/>
       </div>
     );
