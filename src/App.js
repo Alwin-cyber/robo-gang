@@ -22,10 +22,13 @@ componentDidMount(){
   }
 
   render(){
+    //destructuring objects from state
+    const {users,searchField} = this.state;
+    const filteredUsers = users.filter(users => users.name.toLowerCase().includes(searchField.toLowerCase()))
     return(
       <div className="App">
         <input type="search" placeholder="Search" onChange={e => this.setState({searchField: e.target.value})}/>
-        <CardList users={this.state.users}/>
+        <CardList users={filteredUsers}/>
       </div>
     );
   }
