@@ -32,6 +32,7 @@ componentDidMount(){
     const filteredUsers = users.filter(users => users.name.toLowerCase().includes(searchField.toLowerCase()))
     return(
       <div className="App">
+        <h1 className="heading">Robo-Gang</h1>
         <SearchBox placeholder="search" handleChange={this.handleChange}/>
         <CardList users={filteredUsers}/>
       </div>
