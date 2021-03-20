@@ -15,6 +15,10 @@ class App extends Component{/*class component*/
     };
   }
 
+handleChange = (e) => {
+  this.setState({searchField:e.target.value});
+}
+
 //Life Cycles
 componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -28,7 +32,7 @@ componentDidMount(){
     const filteredUsers = users.filter(users => users.name.toLowerCase().includes(searchField.toLowerCase()))
     return(
       <div className="App">
-        <SearchBox placeholder="search" handleChange={event => this.setState({searchField:event.target.value})}/>
+        <SearchBox placeholder="search" handleChange={this.handleChange}/>
         <CardList users={filteredUsers}/>
       </div>
     );
