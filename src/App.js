@@ -15,8 +15,8 @@ class App extends Component{/*class component*/
     };
   }
 
-handleChange = (e) => {
-  this.setState({searchField:e.target.value});
+handleChange = (event) => {
+  this.setState({searchField:event.target.value});
 }
 
 //Life Cycles
@@ -32,7 +32,7 @@ componentDidMount(){
     const filteredUsers = users.filter(users => users.name.toLowerCase().includes(searchField.toLowerCase()))
     return(
       <div className="App">
-        <h1 className="heading">Robo-Gang</h1>
+        <h1 className="heading">Robo Gang</h1>
         <SearchBox placeholder="search" handleChange={this.handleChange}/>
         <CardList users={filteredUsers}/>
       </div>
